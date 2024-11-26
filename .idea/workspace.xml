@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a37e78ce-6132-4e85-8402-4fb57bc550b6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/datasource/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/datasource/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/Staff.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/Staff.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/view/StaffManagementView.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/StaffManagementView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/view/StaffView.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/StaffView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datasource/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datasource/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Staff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/StaffManagementView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StaffManagementView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/StaffView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StaffView.java" afterDir="false" />
-    </list>
+    <list default="true" id="a37e78ce-6132-4e85-8402-4fb57bc550b6" name="Changes" comment="New UI" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,19 +34,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "CW",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jochr/Documents/NAR/As Trainer/ClashofWild",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CW&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jochr/Documents/NAR/As Trainer/ClashofWild&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -95,5 +81,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="New UI" />
   </component>
 </project>
