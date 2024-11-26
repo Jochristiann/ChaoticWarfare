@@ -369,6 +369,4 @@ public abstract class Card {
 	        return null;
 	    }
 	}
-	
-	
 }
