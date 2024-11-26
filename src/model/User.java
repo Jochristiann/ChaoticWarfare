@@ -50,6 +50,17 @@ public abstract class User {
 	    }
 	}
 
+	public static ResultSet getUserbyUserId(String id) {
+		String query = "SELECT UserId,UserName,UserPassword, UserRole FROM user WHERE UserId = ?";
+		try {
+			PreparedStatement preparedStatement = Connect.getConnect().prepareStatement(query);
+			preparedStatement.setString(1, id);
+			return preparedStatement.executeQuery();
+		} catch (SQLException e) {
+			return null;
+		}
+	}
+
 	public static void addUser(String id, String username, String pass) {
 	    
 	    String query = "INSERT INTO user (UserId, UserName, UserPassword) VALUES (?, ?, ?)";
@@ -74,8 +85,6 @@ public abstract class User {
 	        e.printStackTrace();
 	    }
 	}
-	
-	
 	
 	public void updateUser(String name) {
 		String query = "UPDATE user SET UserName = ? WHERE UserId = ?";

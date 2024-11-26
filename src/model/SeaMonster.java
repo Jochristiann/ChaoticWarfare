@@ -49,7 +49,7 @@ public final class SeaMonster extends Gold implements IceSkill {
 	public void getDamage(int damage) {
 		int realDmg = damage - this.getBaseDefend()*this.getBaseHealth()/1000;
 		this.setHealthAftDmg(realDmg);
-		System.out.printf("%s takes the damage  by %d\n", this.getName(),realDmg);
+		System.out.printf("%s takes the damage by %d\n", this.getName(),realDmg);
 	}
 
 	@Override

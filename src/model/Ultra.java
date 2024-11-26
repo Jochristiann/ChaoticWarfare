@@ -123,16 +123,4 @@ public abstract class Ultra extends Card{
 	        return null;
 	    }
 	}
-//	
-//	public static void updateIntUltraCard(String col, String id, int value) {
-//		String query = String.format("UPDATE ultra SET %s = ? WHERE CardId = ?", col);
-//		try {
-//	        PreparedStatement preparedStatement = Connect.getConnect().prepareStatement(query);
-//	        preparedStatement.setInt(1, value);
-//	        preparedStatement.setString(2, id);
-//	        preparedStatement.executeUpdate();
-//	    } catch (SQLException e) {
-//	        e.printStackTrace();
-//	    }
-//	}
 }

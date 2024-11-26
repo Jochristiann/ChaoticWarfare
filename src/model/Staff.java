@@ -78,6 +78,18 @@ public class Staff extends User{
 	    }
 	}
 	
+	public static ResultSet getAllStaff() {
+	    String queryStaff = "SELECT StaffId, UserName, StaffOrigin, StaffPosition, StaffAuthorization FROM user us "
+	            + "JOIN staff st ON st.StaffId = us.UserId";
+	    try {
+	        PreparedStatement preparedStatement = Connect.getConnect().prepareStatement(queryStaff);
+	        return preparedStatement.executeQuery();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        return null;
+	    }
+	}
+	
 	public static void updateStaff(String id, String position) {
 	    String query = "UPDATE staff SET StaffPosition = ? WHERE StaffId = ?";
 	    try {

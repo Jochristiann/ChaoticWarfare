@@ -6,8 +6,10 @@ import controller.CardController;
 import database.Connect;
 import datasource.Company;
 import datasource.Data;
+import model.Card;
 import model.CurrentUser;
 import model.Staff;
+import model.Ultra;
 
 public class StaffView extends View{
 	
@@ -113,6 +115,7 @@ public class StaffView extends View{
 	
 	private void newCard(int cardType) {
 		separator();
+		int skillTreshold = 15;
 		String name = inputNickName("Card name");
 		int goldPrice = inputStats("Gold price",2000000);
 		int diamondPrice = inputStats("Diamond price",1000);
@@ -122,8 +125,8 @@ public class StaffView extends View{
 		double atkSpd = inputStatsDouble("Base atk spd",5);
 		int baseDef = inputStats("Base defense",900);
 		int defPen = inputStats("Base def pen",10);
-		String skill1 = inputName("Skill 1");
-		String skill2 = inputName("Skill 2");
+		String skill1 = inputName("Skill 1",skillTreshold);
+		String skill2 = inputName("Skill 2",skillTreshold);
 		int input;
 		do {
 			try {
@@ -158,38 +161,38 @@ public class StaffView extends View{
 		
 		separator();
 		if(cardType == 1) {
-			String ultraSkill = inputName("Ultra skill name");
+			String ultraSkill = inputName("Ultra skill name",skillTreshold);
 			int ultraStats = inputStats("Ultra stats",150);
 			int energyBoost = inputStats("Energy boost",150);
-			String specialSkill = inputName("Special skill name");
+			String specialSkill = inputName("Special skill name",skillTreshold);
 			int specialStats = inputStats("Special stats", 200);
 			if(input == 1) {
-				String skydance = inputName("Skydance skill name");
+				String skydance = inputName("Skydance skill name",skillTreshold);
 				cc.newCelestial(name, goldPrice, diamondPrice, health, power, baseDef, atkSpd, atkPen, defPen, skill1, skill2, ultraSkill, ultraStats, energyBoost, specialSkill, specialStats, skydance);
 			}else {
-				String blackMyth = inputName("Black myth skill name");
+				String blackMyth = inputName("Black myth skill name",skillTreshold);
 				cc.newDivine(name, goldPrice, diamondPrice, health, power, baseDef, atkSpd, atkPen, defPen, skill1, skill2, ultraSkill, ultraStats, energyBoost, specialSkill, specialStats, blackMyth);
 			}
 		}else if(cardType == 2) {
-			String awakeningSkill = inputName("Gold skill name");
+			String awakeningSkill = inputName("Gold skill name",skillTreshold);
 			if(input == 1) {
-				String skydance = inputName("Skydance skill name");
+				String skydance = inputName("Skydance skill name",skillTreshold);
 				cc.newNoble(name, goldPrice, diamondPrice, health, power, baseDef, atkSpd, atkPen, defPen, skill1, skill2, awakeningSkill, skydance);
 			}else {
-				String iceName = inputName("Ice skill name");
+				String iceName = inputName("Ice skill name",skillTreshold);
 				cc.newSeaMonster(name, goldPrice, diamondPrice, health, power, baseDef, atkSpd, atkPen, defPen, skill1, skill2, awakeningSkill, iceName);
 			}
 		}else if(cardType == 3) {
 			int healEffect = inputStats("Heal effect",150);
 			if(input == 1) {
-				String earthSkill = inputName("Earth skill name");
+				String earthSkill = inputName("Earth skill name",skillTreshold);
 				cc.newGuardian(name, goldPrice, diamondPrice, health, power, baseDef, atkSpd, atkPen, defPen, skill1, skill2, healEffect, earthSkill);
 			}else {
 				cc.newAirKing(name, goldPrice, diamondPrice, health, power, baseDef, atkSpd, atkPen, defPen, skill1, skill2, healEffect);
 			}
 		}else if(cardType == 4) {
 			if(input == 1) {
-				String blackMythSkill = inputName("Black myth skill name");
+				String blackMythSkill = inputName("Black myth skill name",skillTreshold);
 				cc.newBeast(name, goldPrice, diamondPrice, health, power, baseDef, atkSpd, atkPen, defPen, skill1, skill2, blackMythSkill);
 			}else {
 				int healEffect = inputStats("Heal effect", 150);
@@ -202,14 +205,14 @@ public class StaffView extends View{
 		enter();
 	}
 	
-	private String inputName(String ui) {
+	private String inputName(String ui, int threshold) {
 		String input = "";
 		do {
 			try {	
 				System.out.printf("%-25s : ",ui);
 				input = sc.nextLine();
-				if (input.length() < 3 || input.isEmpty()) {
-					System.out.println("The name length must be more than 3 characters.");
+				if (input.length() < 3  || input.isEmpty()) {
+					System.out.println("The name length must be more than 3 characters and less than " + threshold + " characters." );
 					enter();
 				}else if(input.contains("#")){
 					System.out.println("Name is containing forbidden character. Try again.");
@@ -229,12 +232,12 @@ public class StaffView extends View{
 			try {	
 				System.out.printf("%-25s : ",ui);
 				input = sc.nextLine();
-				if (input.length() < 3 || input.isEmpty()) {
-					System.out.println("The name length must be more than 3 characters.");
+				if ((input.length() < 3 || input.length() > 20)  || input.isEmpty()) {
+					System.out.println("The name length must be more than 3 characters and less than or equals 20 characters.");
 				}else if(cc.isCardExist(input)!= null) {
 					System.out.println("Name " + input + " is already used. Try another name.");
 				}else if(input.contains("#")){
-					System.out.println("Name is containing forbidden character. Try again.");
+					System.out.println("Name is containing forbidden character \"#\". Try again.");
 				}
 				else {
 					break;
@@ -297,11 +300,37 @@ public class StaffView extends View{
 		return input;
 	}
 	
+	private void tableSeparate() {
+		for (int i = 0; i < 186; i++) {
+			System.out.print("-");
+		}
+		System.out.println();
+	}
 	
+	private void showAllCard(){
+		tableSeparate();
+		System.out.println("Chaotic Warfare's All Staff");
+		System.out.printf("|%-3s|%-20s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|\n"
+				,"No.","Card Name", "Gold Price", "Diamond Price","Base Health", "Base Power","Base Defend","Base Atk Pen", "Base Atk Spd","Base Def Pen", "Ultra Stats", " Special Stats");
+		tableSeparate();
+		int index = 0;
+		for (Card card: Data.getInstance().getGameCard()) {
+			System.out.printf("|%-3d|%-20s|%-15d|%-15d|%-15d|%-15d|%-15d|%-15d|%-15.1f|%-15d|" ,index+1,card.getName(), card.getGoldPrice(), card.getDiamondPrice(),card.getBaseHealth(), card.getBasePower(),card.getBaseDefend(),card.getBaseAtkPen(), card.getBaseAtkSpd(), card.getBaseDefPen());
+			if(card instanceof Ultra) {
+				Ultra u = (Ultra)card;
+				System.out.printf("%-15d|%-15d|\n", u.getUltraStats(), u.getSpecialStats());
+			}else {
+				System.out.printf("%-15s|%-15s|\n", "-", "-");
+			}
+			index++;
+		}
+		tableSeparate();
+	}
 	
 	private void deleteCard() {
 		do {
 			separator();
+			showAllCard();
 			System.out.print("Input the name to delete the card [Case sensitive] [0 to exit]: ");
 			String name = sc.nextLine();
 			if(name.isBlank()) {
@@ -394,6 +423,7 @@ public class StaffView extends View{
 			int thresh = 7;
 			String table = "card";
 			System.out.println("Update Card Statistic\n");
+			showAllCard();
 			System.out.print("Input card name to update [Case sensitive]: ");
 			String name = sc.nextLine();
 			String id = cc.isCardExist(name);

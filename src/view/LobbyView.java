@@ -18,7 +18,7 @@ public class LobbyView extends View{
 				System.out.println("2. Store");
 				System.out.println("3. How to Play");
 				System.out.println("4. Profile");
-				System.out.println("5. Log out");
+				System.out.println("0. Log out");
 				System.out.print(">> ");
 				int input = sc.nextInt();sc.nextLine();
 				switch (input) {
@@ -34,7 +34,7 @@ public class LobbyView extends View{
 				case 4:
 					apps.showProfileView();
 					break;
-				case 5:
+				case 0:
 					logout();
 					break;
 				default:
@@ -43,7 +43,7 @@ public class LobbyView extends View{
 				}
 			} catch (Exception e) {
 				sc.nextLine();
-				System.out.println("Input must be in number between 1 until 5.");
+				System.out.println("Input must be in number between 0 until 4.");
 				enter();
 			}
 		} while (true);

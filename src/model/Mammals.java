@@ -35,7 +35,7 @@ public final class Mammals extends Basic implements HealFactorSkill{
 		int skill1Dmg = 0;
 		skill1Dmg = (int) (this.getBasePower()*this.getBaseAtkPen()*1.5+this.getBasePower()*1.2);
 		healingEffect();
-		System.out.printf("%s hit enemy using %s! Damage deals %d!\n", this.getName(),this.getSkill1Name(), skill1Dmg);
+		System.out.printf("%s hits enemy using %s! Damage deals %d!\n", this.getName(),this.getSkill1Name(), skill1Dmg);
 		return skill1Dmg;
 	}
 

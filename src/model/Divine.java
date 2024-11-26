@@ -73,7 +73,7 @@ public final class Divine extends Ultra implements BlackMythSkill {
 		if(realDamage < 0) {
 			realDamage = 0;
 		}
-		System.out.printf("%s hitted! %d damage taken\n", this.getName(),realDamage);
+		System.out.printf("%s got hit! %d damage taken\n", this.getName(),realDamage);
 		this.setHealthAftDmg(realDamage);
 	}
 

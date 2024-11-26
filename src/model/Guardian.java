@@ -26,7 +26,7 @@ public final class Guardian extends Silver implements EarthSkill{
 	@Override
 	public void healingEffect() {
 		int heal = (int) (150 + 0.2*this.getBaseHealth());
-		System.out.printf("%s is regenerating and get %d hp.\n", this.getName(),heal);
+		System.out.printf("%s is regenerating! Health is growing up by %d hp.\n", this.getName(),heal);
 		this.setBaseHealth(heal);
 	}
 
@@ -58,7 +58,7 @@ public final class Guardian extends Silver implements EarthSkill{
 		if(realDmg < 0) {
 			realDmg = 0;
 		}
-		System.out.printf("%s hitted! Damage taken %d\n", realDmg);
+		System.out.printf("%s got hit! Damage taken %d\n", realDmg);
 		int healEff = (int) (realDmg *0.01);
 		this.setBaseHealth(healEff);
 		System.out.printf("Wow! %s gets lifesteal %d\n", healEff);
