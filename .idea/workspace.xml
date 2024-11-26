@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a37e78ce-6132-4e85-8402-4fb57bc550b6" name="Changes" comment="New UI" />
+    <list default="true" id="a37e78ce-6132-4e85-8402-4fb57bc550b6" name="Changes" comment="New UI">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/StaffView.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/StaffView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/StaffView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StaffView.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,12 +70,36 @@
       <workItem from="1731383981689" duration="266000" />
       <workItem from="1732522182461" duration="2735000" />
     </task>
+    <task id="LOCAL-00001" summary="New UI">
+      <option name="closed" value="true" />
+      <created>1732594236406</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732594236406</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">

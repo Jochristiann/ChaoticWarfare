@@ -233,11 +233,11 @@ public class StaffView extends View{
 				System.out.printf("%-25s : ",ui);
 				input = sc.nextLine();
 				if ((input.length() < 3 || input.length() > 20)  || input.isEmpty()) {
-					System.out.println("The name length must be more than 3 characters.");
+					System.out.println("The name length must be more than 3 characters and less than or equals 20 characters.");
 				}else if(cc.isCardExist(input)!= null) {
 					System.out.println("Name " + input + " is already used. Try another name.");
 				}else if(input.contains("#")){
-					System.out.println("Name is containing forbidden character. Try again.");
+					System.out.println("Name is containing forbidden character \"#\". Try again.");
 				}
 				else {
 					break;
