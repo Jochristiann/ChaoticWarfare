@@ -22,7 +22,6 @@ public class Connect {
 			connects = DriverManager.getConnection(jdbcUrl, username, password);
 			st = connects.createStatement();
 		} catch (Exception e) {
-//			System.out.println("Failed to connect database.");
 		}
 	}
 	

@@ -45,6 +45,7 @@ public class MenuView extends View {
 					System.exit(0);
 					break;
 				}
+				enter();
 			} catch (Exception e) {
 				sc.nextLine();
 				System.out.println("Input must be a number 1 or 2.");

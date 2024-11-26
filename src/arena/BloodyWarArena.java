@@ -60,7 +60,7 @@ public class BloodyWarArena extends GameArena{
 			while(isGameRunning()) {
 				if(isGameRunning()) {
 					if(!(isOpponentStopSpin() && isUserStopSpin())) {
-						ap.showBWView();
+						ap.showBWView(); 
 					}
 					
 					if(isOpponentStopSpin() && isUserStopSpin()) {
