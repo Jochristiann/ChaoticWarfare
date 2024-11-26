@@ -2,8 +2,10 @@ package view;
 
 import controller.AppController;
 import database.FileDatabase;
+import datasource.Data;
 import model.CurrentUser;
 import model.Staff;
+import model.User;
 
 public class StaffManagementView extends View{
 
@@ -17,14 +19,12 @@ public class StaffManagementView extends View{
 		fd = FileDatabase.instance();
 	}
 
-	
 	public void staffRegistrationDisplay() {
 		int input = 0;
 		int auth = 2;
 		do {
 			separator();
 			try {
-				
 				System.out.println("Internal Chaotic Warfare Management");
 				System.out.println("1. New Employee");
 				System.out.println("2. Remove Employee");
@@ -63,6 +63,28 @@ public class StaffManagementView extends View{
 			
 		} while (true);
 		
+	}
+	
+	private void tableSeparate() {
+		for (int i = 0; i < 74; i++) {
+			System.out.print("-");
+		}
+		System.out.println();
+	}
+	
+	private void showAllStaff() {
+		tableSeparate();
+		System.out.printf("|%-3s|%-20s|%-15s|%-15s|%-15s|\n"
+				,"No.","Staff Name", "Origin", "Position", "Authorization");
+		tableSeparate();
+		int index = 0;
+		for (User us : Data.getInstance().getAllStaff()) {
+			Staff st = (Staff)us;
+			System.out.printf("|%-3d|%-20s|%-15s|%-15s|%-15s|\n"
+					,index+1,st.getUsername(), st.getOrigin(),st.getPosition(), st.getAuthorization());
+			index++;
+		}
+		tableSeparate();
 	}
 	
 	private String employeePosition() {
@@ -133,6 +155,7 @@ public class StaffManagementView extends View{
 	private void staffUpdate() {
 		
 		separator();
+		showAllStaff();
 		System.out.print("Input staff's username  : ");
 		String username = sc.nextLine();
 		String position = employeePosition();
@@ -148,6 +171,7 @@ public class StaffManagementView extends View{
 	
 	private void staffDelete() {
 		separator();
+		showAllStaff();
 		System.out.print("Input staff's username  : ");
 		String username = sc.nextLine();
 		System.out.print("Are you sure want to delete the user? [y/n] ");

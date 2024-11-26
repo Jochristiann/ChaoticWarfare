@@ -68,7 +68,7 @@ public final class Celestial extends Ultra implements SkydanceSkill{
 		if(realDamage < 0) {
 			realDamage = 0;
 		}
-		System.out.printf("%s hitted! Damage taken %d\n", this.getName(), realDamage);
+		System.out.printf("%s got hit! Damage taken %d\n", this.getName(), realDamage);
 		this.setHealthAftDmg(realDamage);
 	}
 	

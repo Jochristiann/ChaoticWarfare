@@ -35,7 +35,6 @@ public class RegisterView extends View {
 			enter();
 		} while (true);
 		uc.register(username, password);
-		enter();
 	}
 	
 }

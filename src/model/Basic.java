@@ -23,7 +23,7 @@ public abstract class Basic extends Card{
 			realDmg = 0;
 		}
 		this.setHealthAftDmg(realDmg);
-		System.out.printf("%s gets damage from enemy!\n", realDmg);
+		System.out.printf("%s gets damage from enemy! %d damage taken\n", this.getName(),realDmg);
 	}
 	
 	public ResultSet getBasicCardbyCardId(String cardId) {

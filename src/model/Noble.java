@@ -42,7 +42,7 @@ public final class Noble extends Gold implements SkydanceSkill{
 	@Override
 	public void getDamage(int damage) {
 		int realDamage = (int) (damage - 0.01*this.getBaseDefend()*damage - this.getBaseDefPen()*this.getBaseDefend());
-		System.out.printf("%s hitted! %d damage taken\n", this.getName(),realDamage);
+		System.out.printf("%s got hit! %d damage taken\n", this.getName(),realDamage);
 		this.setHealthAftDmg(realDamage);
 	}
 

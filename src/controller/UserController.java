@@ -253,6 +253,26 @@ public class UserController {
 		
 	}
 	
+	public ArrayList<User> getAllStaff(){
+		ArrayList<User> allStaff = new ArrayList<User>();
+		ResultSet res = Staff.getAllStaff();
+		try {
+			while(res.next()) {
+				String userid = res.getString("StaffId");
+				String username = res.getString("UserName");
+				String password = null;
+				String origin = res.getString("StaffOrigin");
+				String position = res.getString("StaffPosition");
+				String authorization = res.getString("StaffAuthorization");
+				Staff newStaff = new Staff(userid, username, password, origin, position, authorization);
+				allStaff.add(newStaff);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return allStaff;
+	}
+	
 	public boolean staffExist(String username) {
 	
 		ResultSet res = Staff.getStaffbyUsername(username);
@@ -281,7 +301,6 @@ public class UserController {
 				id = res.getString("StaffId");
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if(!(id.isEmpty()||id.isBlank())){

@@ -50,7 +50,7 @@ public class AirKing extends Silver {
 		if(realDmg < 0) {
 			realDmg = 0;
 		}
-		System.out.printf("%s is hitted! Damage taken %d\n", this.getName(), realDmg);
+		System.out.printf("%s got hit! Damage taken %d\n", this.getName(), realDmg);
 		
 		int val = rand.nextInt(5);
 		if(val > 3) {

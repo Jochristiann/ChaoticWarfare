@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a37e78ce-6132-4e85-8402-4fb57bc550b6" name="Changes" comment="" />
+    <list default="true" id="a37e78ce-6132-4e85-8402-4fb57bc550b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/datasource/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/datasource/Data.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/model/Staff.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/Staff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/StaffManagementView.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/StaffManagementView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/StaffView.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/StaffView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/datasource/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datasource/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/StaffManagementView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StaffManagementView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/StaffView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StaffView.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Jochristiann&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Jochristiann/ChaoticWarfare.git&quot;,
+    &quot;accountId&quot;: &quot;c909c2e8-80cb-43ae-92ea-2cb1c1a4a8fa&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2ojXVAiN9FcNB0zl2Z1Vr7BQQM2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -18,8 +51,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "CW",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/jochr/Documents/NAR/As Trainer/ClashofWild",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -41,10 +78,22 @@
       <option name="presentableId" value="Default" />
       <updated>1731383980838</updated>
       <workItem from="1731383981689" duration="266000" />
+      <workItem from="1732522182461" duration="2735000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
