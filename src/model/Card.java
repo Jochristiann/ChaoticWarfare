@@ -178,7 +178,7 @@ public abstract class Card {
 	public abstract void getDamage(int damage);
 	
 	public String grid() {
-		String result = String.format("%-20s|Gold: %-8d|Diamond: %-5d", name, goldPrice, diamondPrice);
+		String result = String.format("%-15s|Gold: %-8d|Diamond: %-5d", name, goldPrice, diamondPrice);
         return result;
     }
 	

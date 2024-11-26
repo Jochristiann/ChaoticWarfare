@@ -8,19 +8,7 @@ import java.util.UUID;
 
 import database.Connect;
 import datasource.Data;
-import model.AirKing;
-import model.Basic;
-import model.Beast;
-import model.Card;
-import model.Celestial;
-import model.Divine;
-import model.Gold;
-import model.Guardian;
-import model.Mammals;
-import model.Noble;
-import model.SeaMonster;
-import model.Silver;
-import model.Ultra;
+import model.*;
 
 public class CardController {
 	
