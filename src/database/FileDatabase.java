@@ -39,14 +39,14 @@ public class FileDatabase {
 			FileReader fr = new FileReader(filePath);
 			BufferedReader br = new BufferedReader(fr);
 			String line;
-			System.out.println("Migrate Log:");
+			System.out.println(" Migrate Log:");
 			try {
 				while((line = br.readLine())!=null) {
 					String[] parts = line.split("#");
 					String id = parts[0];
 					String name = parts[1];
 					if(cc.isCardExist(name)!= null) {
-						System.out.println(name + " is not migrated because the name is already exist.");
+						System.out.println(" "+name + " is not migrated because the name is already exist.");
 						continue;
 					}
 					
@@ -119,7 +119,7 @@ public class FileDatabase {
 				
 			}
 		} catch (FileNotFoundException e) {
-			System.out.println("File not found.");
+			System.out.println(" File not found.");
 		}
 	}
 	

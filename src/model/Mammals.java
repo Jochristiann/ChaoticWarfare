@@ -35,7 +35,7 @@ public final class Mammals extends Basic implements HealFactorSkill{
 		int skill1Dmg = 0;
 		skill1Dmg = (int) (this.getBasePower()*this.getBaseAtkPen()*1.5+this.getBasePower()*1.2);
 		healingEffect();
-		System.out.printf("%s hits enemy using %s! Damage deals %d!\n", this.getName(),this.getSkill1Name(), skill1Dmg);
+		System.out.printf(" %s hits enemy using %s! Damage deals %d!\n", this.getName(),this.getSkill1Name(), skill1Dmg);
 		return skill1Dmg;
 	}
 
@@ -43,7 +43,7 @@ public final class Mammals extends Basic implements HealFactorSkill{
 	public int skill2() {
 		int skill2Dmg = this.getBaseHealth()*this.getHealRate()*2;
 		this.setBaseHealth(skill2Dmg);
-		System.out.printf("%s casts skill %s and recover %d hp!\n", this.getName(),this.getSkill2Name(),skill2Dmg);
+		System.out.printf(" %s casts skill %s and recover %d hp!\n", this.getName(),this.getSkill2Name(),skill2Dmg);
 		return 0;
 	}
 
@@ -51,7 +51,7 @@ public final class Mammals extends Basic implements HealFactorSkill{
 	public void healingEffect() {
 		int heal = (int) (this.getBaseHealth()*0.45 + this.healRate*this.getBaseDefend()/1.75);
 		this.setBaseHealth(heal);
-		System.out.printf("%s got heal! %d extra hp\n",this.getName(),heal);
+		System.out.printf(" %s got heal! %d extra hp\n",this.getName(),heal);
 	}
 	
 	public void newMammals() {
@@ -63,7 +63,7 @@ public final class Mammals extends Basic implements HealFactorSkill{
 	        preparedStatement.setString(1, this.getId());
 	        preparedStatement.setInt(2, healRate); 
 	        preparedStatement.executeUpdate();
-	        System.out.println(this.getName() + " is successfully added as Mammals Basic card.");
+	        System.out.println(" "+this.getName() + " is successfully added as Mammals Basic card.");
 	    } catch (SQLException e) {
 	    	
 	    }
@@ -78,7 +78,7 @@ public final class Mammals extends Basic implements HealFactorSkill{
 				System.out.println(getName() + " is successfully added to temporary database as Mammals Basic card.");
 			}
 		} catch (IOException e) {
-			System.out.println("Failed to insert data.");
+			System.out.println(" Failed to insert data.");
 		}
 	}
 	

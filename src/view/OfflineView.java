@@ -17,10 +17,10 @@ public class OfflineView extends View {
 	public void offlineDisplay() {
 		do {		
 			separator();
-			System.out.println("Welcome to Temporary Database");
-			System.out.println("1. Create card");
-			System.out.println("0. Exit");
-			System.out.print(">> ");
+			System.out.println(" Welcome to Temporary Database");
+			System.out.println(" 1. Create card");
+			System.out.println(" 0. Exit");
+			System.out.print(" >> ");
 			try {
 				int input = sc.nextInt();sc.nextLine();
 				if(input == 1) {
@@ -28,11 +28,11 @@ public class OfflineView extends View {
 				}else if(input == 0) {
 					break;
 				}else {
-					System.out.println("Invalid input. Please try again.");
+					System.out.println(" Invalid input. Please try again.");
 					enter();
 				}
 			} catch (Exception e) {
-				System.out.println("Input must be in number. Please try again");
+				System.out.println(" Input must be in number. Please try again");
 				enter();
 			}
 		} while (true);
@@ -42,13 +42,13 @@ public class OfflineView extends View {
 		do {
 			try {
 				separator();
-				System.out.println("Choose Card Grade");
-				System.out.println("1. Ultra");
-				System.out.println("2. Gold");
-				System.out.println("3. Silver");
-				System.out.println("4. Basic");
-				System.out.println("0. Cancel");
-				System.out.print(">> ");
+				System.out.println(" Choose Card Grade");
+				System.out.println(" 1. Ultra");
+				System.out.println(" 2. Gold");
+				System.out.println(" 3. Silver");
+				System.out.println(" 4. Basic");
+				System.out.println(" 0. Cancel");
+				System.out.print(" >> ");
 				int input = sc.nextInt();sc.nextLine();
 				if(input >= 1 && input <= 4) {
 					newCard(input);
@@ -56,29 +56,29 @@ public class OfflineView extends View {
 				}else if(input == 0) {
 					break;
 				}else {
-					System.out.println("Invalid input. Please try again.");
+					System.out.println(" Invalid input. Please try again.");
 					enter();
 				}
 				
 			} catch (Exception e) {
 				sc.nextLine();
-				System.out.println("Input must be in number between 1 until 5.");
+				System.out.println(" Input must be in number between 1 until 5.");
 				enter();
 			}
 		} while (true);
 	}
 	
-	private String inputName(String ui) {
+	private String inputName(String ui ) {
 		String input = "";
 		do {
 			try {	
-				System.out.printf("%-25s : ",ui);
+				System.out.printf(" %-25s : ",ui);
 				input = sc.nextLine();
 				if (input.length() < 3 || input.isEmpty()) {
-					System.out.println("The name length must be more than 3 characters.");
+					System.out.println(" The name length must be more than 3 characters.");
 					enter();
 				}else if(input.contains("#")){
-					System.out.println("Name is containing forbidden character. Try again.");
+					System.out.println(" Name is containing forbidden character. Try again.");
 				}else {
 					break;
 				}
@@ -94,12 +94,12 @@ public class OfflineView extends View {
 		String input = "";
 		do {
 			try {	
-				System.out.printf("%-25s : ",ui);
+				System.out.printf(" %-25s : ",ui);
 				input = sc.nextLine();
 				if (input.length() < 3 || input.isEmpty()) {
-					System.out.println("The name length must be more than 3 characters.");
+					System.out.println(" The name length must be more than 3 characters.");
 				}else if(input.contains("#")){
-					System.out.println("Name is containing forbidden character. Try again.");
+					System.out.println(" Name is containing forbidden character. Try again.");
 				}
 				else {
 					break;
@@ -116,21 +116,21 @@ public class OfflineView extends View {
 		int input = 0;
 		do {
 			try {
-				System.out.printf("%-25s : ",ui);
+				System.out.printf(" %-25s : ",ui);
 				input = sc.nextInt();sc.nextLine();
 				if (input <= 0) {
-					System.out.println("Statistic must be more than 0.");
+					System.out.println(" Statistic must be more than 0.");
 					enter();
 				}
 				if (input > threshold) {
-					System.out.printf("Statistic must less than or equals %d.", threshold);
+					System.out.printf(" Statistic must less than or equals %d.\n", threshold);
 					enter();
 				}else {
 					break;
 				}
 			} catch (Exception e) {
 				sc.nextLine();
-				System.out.println("Input must be in number and more than 0.");
+				System.out.println(" Input must be in number and more than 0.");
 				enter();
 			}
 		} while (true);
@@ -141,21 +141,21 @@ public class OfflineView extends View {
 		double input = 0;
 		do { 
 			try {
-				System.out.printf("%-25s : ",ui);
+				System.out.printf(" %-25s : ",ui);
 				input = sc.nextDouble();sc.nextLine();
 				if (input <= 0) {
-					System.out.println("Statistic must be more than 0.");
+					System.out.println(" Statistic must be more than 0.");
 					enter();
 				}
 				if (input > threshold) {
-					System.out.printf("Statistic must less than or equals %d.", threshold);
+					System.out.printf(" Statistic must less than or equals %d.\n", threshold);
 					enter();
 				}else {
 					break;
 				}
 			} catch (Exception e) {
 				sc.nextLine();
-				System.out.println("Input must be in number and more than 0.");
+				System.out.println(" Input must be in number and more than 0.");
 				enter();
 			}
 		} while (true);
@@ -179,30 +179,30 @@ public class OfflineView extends View {
 		do {
 			try {
 				separator();
-				System.out.println("Choose type");
+				System.out.println(" Choose type");
 				if (cardType == 1) {
-					System.out.println("1. Celestial");
-					System.out.println("2. Divine");
+					System.out.println(" 1. Celestial");
+					System.out.println(" 2. Divine");
 				}else if(cardType == 2) {
-					System.out.println("1. Noble");
-					System.out.println("2. Sea Monster");
+					System.out.println(" 1. Noble");
+					System.out.println(" 2. Sea Monster");
 				}else if(cardType == 3) {
-					System.out.println("1. Guardian");
-					System.out.println("2. Air King");
+					System.out.println(" 1. Guardian");
+					System.out.println(" 2. Air King");
 				}else {
-					System.out.println("1. Beast");
-					System.out.println("2. Mammals");
+					System.out.println(" 1. Beast");
+					System.out.println(" 2. Mammals");
 				}
-				System.out.print(">> ");
+				System.out.print(" >> ");
 				input = sc.nextInt();sc.nextLine();   
 				if(input >= 1 && input <= 2) {
 					break;
 				}else {
-					System.out.println("Choose the type by input 1 or 2");
+					System.out.println(" Choose the type by input 1 or 2");
 				}
 			} catch (Exception e) {
 				sc.nextLine();
-				System.out.println("Input must be in number between 1 and 2.");
+				System.out.println(" Input must be in number between 1 and 2.");
 				enter();
 			}
 		} while (true);

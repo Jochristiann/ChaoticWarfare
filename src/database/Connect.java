@@ -50,7 +50,7 @@ public class Connect {
 		try {
 			result = st.executeQuery(query);
 		} catch (Exception e) {
-			System.out.println("Failed to execute query.");
+			System.out.println(" Failed to execute query.");
 		}
 		return result;
 	}

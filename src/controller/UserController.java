@@ -26,12 +26,12 @@ public class UserController {
 	
 	public boolean validateUsername(String username) {
 		if(username.isEmpty()) {
-			System.out.println("Username must be filled.");
+			System.out.println(" Username must be filled.");
 			return false;
 		}
 		
 		if(username.length() < 4) {
-			System.out.println("Username must be at least 4 characters");
+			System.out.println(" Username must be at least 4 characters");
 			return false;
 		}
 		
@@ -39,7 +39,7 @@ public class UserController {
 		ResultSet resultUser = User.getUser(username);
 		try {
 			if(resultUser != null && resultUser.next()) {
-				System.out.println("Username is already used. Try again.");
+				System.out.println(" Username is already used. Try again.");
 				return false;
 			}
 		} catch (SQLException e) {
@@ -49,7 +49,7 @@ public class UserController {
 	
 	public boolean validateNewPassword(String password) {
 	    if (password.length() < 6) {
-	        System.out.println("Password must be at least 6 characters.");
+	        System.out.println(" Password must be at least 6 characters.");
 	        return false;
 	    } 
 	    boolean hasUpperCase = false;
@@ -72,19 +72,19 @@ public class UserController {
 	        }
 	    }
 	    if (!hasUpperCase) {
-	        System.out.println("Password must contain at least one uppercase letter.");
+	        System.out.println(" Password must contain at least one uppercase letter.");
 	        return false;
 	    }
 	    if (!hasLowerCase) {
-	        System.out.println("Password must contain at least one lowercase letter.");
+	        System.out.println(" Password must contain at least one lowercase letter.");
 	        return false;
 	    }
 	    if (!hasDigit) {
-	        System.out.println("Password must contain at least one digit.");
+	        System.out.println(" Password must contain at least one digit.");
 	        return false;
 	    }
 	    if (!hasSpecialChar) {
-	        System.out.println("Password must contain at least one special character.");
+	        System.out.println(" Password must contain at least one special character.");
 	        return false;
 	    }
 	    
@@ -165,15 +165,15 @@ public class UserController {
 	
 	public boolean login(String username, String password) {
 		if(username.isEmpty()) {
-			System.out.println("Username must be filled.");
+			System.out.println(" Username must be filled.");
 			return false;
 		}
 		else if(password.isEmpty()) {
-			System.out.println("Password must be filled.");
+			System.out.println(" Password must be filled.");
 			return false;
 		}
 		else if(password.length() < 5) {
-			System.out.println("Password must be at least 5 characters.");
+			System.out.println(" Password must be at least 5 characters.");
 			return false;
 		}
 		
@@ -181,14 +181,14 @@ public class UserController {
 		ResultSet result = User.getUser(username);
 		try {
 		    if (!result.next()) {
-		        System.out.println("Username not found. Please try again.");
+		        System.out.println(" Username not found. Please try again.");
 		        return false;
 		    }
 		    String id = result.getString("UserId");
 		    String pass = result.getString("UserPassword");
 		    String role = result.getString("UserRole");
 		    if (!validateLoginPassword(pass, password)) {
-		        System.out.println("Incorrect password. Please try again.");
+		        System.out.println(" Incorrect password. Please try again.");
 		        return false;
 		    }
 
@@ -214,7 +214,7 @@ public class UserController {
 		            CurrentUser.setInstance(currentUser);
 		        }
 		    }
-		    System.out.println("Successfully logged in.");
+		    System.out.println(" Successfully logged in.");
 		    return true;
 
 		} catch (SQLException e) {
@@ -280,7 +280,7 @@ public class UserController {
 			if(res.next()) {
 				String pos = res.getString("StaffPosition");
 				if(pos.equals("CEO")) {
-					System.out.println("You can't access this username.");
+					System.out.println(" You can't access this username.");
 					return false;
 				}else {
 					return true;
@@ -289,7 +289,7 @@ public class UserController {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("User not found.");
+		System.out.println(" User not found.");
 		return false;
 	}
 	
@@ -305,9 +305,9 @@ public class UserController {
 		}
 		if(!(id.isEmpty()||id.isBlank())){
 			Staff.updateStaff(id, position);
-			System.out.println("Successfully updated.");
+			System.out.println(" Successfully updated.");
 		}else {
-			System.out.println("Failed to update");
+			System.out.println(" Failed to update");
 		}
 	}
 	
@@ -323,9 +323,9 @@ public class UserController {
 		}
 		if(!(id.isEmpty()||id.isBlank())){
 			Staff.deleteStaff(id);
-			System.out.println("Successfully deleted.");
+			System.out.println(" Successfully deleted.");
 		}else {
-			System.out.println("Failed to delete");
+			System.out.println(" Failed to delete");
 		}
 	}
 }

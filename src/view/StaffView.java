@@ -34,18 +34,18 @@ public class StaffView extends View{
 		do {
 			try {
 				separator();
-				System.out.println("Welcome to Staff Page");
-				System.out.println("1. Profile account");
+				System.out.println(" Welcome to Staff Page");
+				System.out.println(" 1. Profile account");
 				if(currentStaff.getAuthorization().equals("Mid") || currentStaff.getAuthorization().equals("High")) {
-					System.out.println("2. Create new card");
-					System.out.println("3. Update card");
-					System.out.println("4. Delete card");
+					System.out.println(" 2. Create new card");
+					System.out.println(" 3. Update card");
+					System.out.println(" 4. Delete card");
 					if(currentStaff.getAuthorization().equals("High")) {
-						System.out.println("5. Reset Blocked Registration");
+						System.out.println(" 5. Reset Blocked Registration");
 					}
 				}
-				System.out.println("0. Logout");
-				System.out.print(">> ");
+				System.out.println(" 0. Logout");
+				System.out.print(" >> ");
 				input = sc.nextInt();sc.nextLine();
 				if(input >= 0 && input <= threshold) {
 					if(input == 0) {
@@ -67,16 +67,16 @@ public class StaffView extends View{
 						break;
 					case 5:
 						Company.getInstance().resetTry();
-						System.out.println("Successfully reset.");
+						System.out.println(" Successfully reset.");
 						enter();
 						break;
 					}
 					
 				}else {
-					System.out.println("Input must be between 0 until " + threshold);
+					System.out.println(" Input must be between 0 until " + threshold);
 				}
 			} catch (Exception e) {
-				System.out.println("Input must be in number.");
+				System.out.println(" Input must be in number.");
 			}
 			
 		} while (true);
@@ -87,13 +87,13 @@ public class StaffView extends View{
 		do {
 			try {
 				separator();
-				System.out.println("Choose Card Grade");
-				System.out.println("1. Ultra");
-				System.out.println("2. Gold");
-				System.out.println("3. Silver");
-				System.out.println("4. Basic");
-				System.out.println("0. Cancel");
-				System.out.print(">> ");
+				System.out.println(" Choose Card Grade");
+				System.out.println(" 1. Ultra");
+				System.out.println(" 2. Gold");
+				System.out.println(" 3. Silver");
+				System.out.println(" 4. Basic");
+				System.out.println(" 0. Cancel");
+				System.out.print(" >> ");
 				int input = sc.nextInt();sc.nextLine();
 				if(input >= 1 && input <= 4) {
 					newCard(input);
@@ -101,13 +101,13 @@ public class StaffView extends View{
 				}else if(input == 0) {
 					break;
 				}else {
-					System.out.println("Invalid input. Please try again.");
+					System.out.println(" Invalid input. Please try again.");
 					enter();
 				}
 				
 			} catch (Exception e) {
 				sc.nextLine();
-				System.out.println("Input must be in number between 1 until 5.");
+				System.out.println(" Input must be in number between 1 until 5.");
 				enter();
 			}
 		} while (true);
@@ -131,30 +131,30 @@ public class StaffView extends View{
 		do {
 			try {
 				separator();
-				System.out.println("Choose type");
+				System.out.println(" Choose type");
 				if (cardType == 1) {
-					System.out.println("1. Celestial");
-					System.out.println("2. Divine");
+					System.out.println(" 1. Celestial");
+					System.out.println(" 2. Divine");
 				}else if(cardType == 2) {
-					System.out.println("1. Noble");
-					System.out.println("2. Sea Monster");
+					System.out.println(" 1. Noble");
+					System.out.println(" 2. Sea Monster");
 				}else if(cardType == 3) {
-					System.out.println("1. Guardian");
-					System.out.println("2. Air King");
+					System.out.println(" 1. Guardian");
+					System.out.println(" 2. Air King");
 				}else {
-					System.out.println("1. Beast");
-					System.out.println("2. Mammals");
+					System.out.println(" 1. Beast");
+					System.out.println(" 2. Mammals");
 				}
-				System.out.print(">> ");
+				System.out.print(" >> ");
 				input = sc.nextInt();sc.nextLine();   
 				if(input >= 1 && input <= 2) {
 					break;
 				}else {
-					System.out.println("Choose the type by input 1 or 2");
+					System.out.println(" Choose the type by input 1 or 2");
 				}
 			} catch (Exception e) {
 				sc.nextLine();
-				System.out.println("Input must be in number between 1 and 2.");
+				System.out.println(" Input must be in number between 1 and 2.");
 				enter();
 			}
 		} while (true);
@@ -209,13 +209,13 @@ public class StaffView extends View{
 		String input = "";
 		do {
 			try {	
-				System.out.printf("%-25s : ",ui);
+				System.out.printf(" %-25s : ",ui);
 				input = sc.nextLine();
 				if (input.length() < 3  || input.isEmpty()) {
-					System.out.println("The name length must be more than 3 characters and less than " + threshold + " characters." );
+					System.out.println(" The name length must be more than 3 characters and less than " + threshold + " characters." );
 					enter();
 				}else if(input.contains("#")){
-					System.out.println("Name is containing forbidden character. Try again.");
+					System.out.println(" Name is containing forbidden character. Try again.");
 				}else {
 					break;
 				}
@@ -230,14 +230,14 @@ public class StaffView extends View{
 		String input = "";
 		do {
 			try {	
-				System.out.printf("%-25s : ",ui);
+				System.out.printf(" %-25s : ",ui);
 				input = sc.nextLine();
 				if ((input.length() < 3 || input.length() > 15)  || input.isEmpty()) {
-					System.out.println("The name length must be more than 3 characters and less than or equals 15 characters.");
+					System.out.println(" The name length must be more than 3 characters and less than or equals 15 characters.");
 				}else if(cc.isCardExist(input)!= null) {
-					System.out.println("Name " + input + " is already used. Try another name.");
+					System.out.println(" Name " + input + " is already used. Try another name.");
 				}else if(input.contains("#")){
-					System.out.println("Name is containing forbidden character \"#\". Try again.");
+					System.out.println(" Name is containing forbidden character \"#\". Try again.");
 				}
 				else {
 					break;
@@ -254,21 +254,21 @@ public class StaffView extends View{
 		int input = 0;
 		do {
 			try {
-				System.out.printf("%-25s [Range 0 - %d] : ",ui, threshold);
+				System.out.printf(" %-25s [Range 0 - %d] : ",ui, threshold);
 				input = sc.nextInt();sc.nextLine();
 				if (input <= 0) {
-					System.out.println("Statistic must more than 0.");
+					System.out.println(" Statistic must more than 0.");
 					enter();
 				}
 				if (input > threshold) {
-					System.out.printf("Statistic must less than or equals %d.", threshold);
+					System.out.printf(" Statistic must less than or equals %d.", threshold);
 					enter();
 				}else {
 					break;
 				}
 			} catch (Exception e) {
 				sc.nextLine();
-				System.out.println("Input must be in number and more than 0.");
+				System.out.println(" Input must be in number and more than 0.");
 				enter();
 			}
 		} while (true);
@@ -279,21 +279,21 @@ public class StaffView extends View{
 		double input = 0;
 		do {
 			try {
-				System.out.printf("%-25s [Range 0 - %d]: ",ui, threshold);
+				System.out.printf(" %-25s [Range 0 - %d]: ",ui, threshold);
 				input = sc.nextDouble();sc.nextLine();
 				if (input <= 0) {
-					System.out.println("Statistic must more than 0.");
+					System.out.println(" Statistic must more than 0.");
 					enter();
 				}
 				if (input > threshold) {
-					System.out.printf("Statistic must less than or equals %d.", threshold);
+					System.out.printf(" Statistic must less than or equals %d.", threshold);
 					enter();
 				}else {
 					break;
 				}
 			} catch (Exception e) {
 				sc.nextLine();
-				System.out.println("Input must be in number and more than 0.");
+				System.out.println(" Input must be in number and more than 0.");
 				enter();
 			}
 		} while (true);
@@ -301,26 +301,26 @@ public class StaffView extends View{
 	}
 	
 	private void tableSeparate() {
-		for (int i = 0; i < 186; i++) {
-			System.out.print("-");
+		for (int i = 0; i < 187; i++) {
+			System.out.print(" -");
 		}
 		System.out.println();
 	}
 	
 	private void showAllCard(){
 		tableSeparate();
-		System.out.println("Chaotic Warfare's All Staff");
-		System.out.printf("|%-3s|%-20s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|\n"
+		System.out.println(" Chaotic Warfare's All Staff");
+		System.out.printf(" |%-3s|%-20s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|%-15s|\n"
 				,"No.","Card Name", "Gold Price", "Diamond Price","Base Health", "Base Power","Base Defend","Base Atk Pen", "Base Atk Spd","Base Def Pen", "Ultra Stats", " Special Stats");
 		tableSeparate();
 		int index = 0;
 		for (Card card: Data.getInstance().getGameCard()) {
-			System.out.printf("|%-3d|%-20s|%-15d|%-15d|%-15d|%-15d|%-15d|%-15d|%-15.1f|%-15d|" ,index+1,card.getName(), card.getGoldPrice(), card.getDiamondPrice(),card.getBaseHealth(), card.getBasePower(),card.getBaseDefend(),card.getBaseAtkPen(), card.getBaseAtkSpd(), card.getBaseDefPen());
+			System.out.printf(" |%-3d|%-20s|%-15d|%-15d|%-15d|%-15d|%-15d|%-15d|%-15.1f|%-15d|" ,index+1,card.getName(), card.getGoldPrice(), card.getDiamondPrice(),card.getBaseHealth(), card.getBasePower(),card.getBaseDefend(),card.getBaseAtkPen(), card.getBaseAtkSpd(), card.getBaseDefPen());
 			if(card instanceof Ultra) {
 				Ultra u = (Ultra)card;
-				System.out.printf("%-15d|%-15d|\n", u.getUltraStats(), u.getSpecialStats());
+				System.out.printf(" %-15d|%-15d|\n", u.getUltraStats(), u.getSpecialStats());
 			}else {
-				System.out.printf("%-15s|%-15s|\n", "-", "-");
+				System.out.printf(" %-15s|%-15s|\n", "-", "-");
 			}
 			index++;
 		}
@@ -331,27 +331,27 @@ public class StaffView extends View{
 		do {
 			separator();
 			showAllCard();
-			System.out.print("Input the name to delete the card [Case sensitive] [0 to exit]: ");
+			System.out.print(" Input the name to delete the card [Case sensitive] [0 to exit]: ");
 			String name = sc.nextLine();
 			if(name.isBlank()) {
-				System.out.println("Name must not blank. Try again.");
+				System.out.println(" Name must not blank. Try again.");
 			}else if (name.equals("0")){
 				break;
 			}else {
 				String id = cc.isCardExist(name);
 				if(cc.isCardExist(name)!= null) {
-					System.out.printf("Are you sure to delete card with name %s? [y/n] ", name);
+					System.out.printf(" Are you sure to delete card with name %s? [y/n] ", name);
 					String input = sc.nextLine();
 					if(input.equalsIgnoreCase("y")) {
 						cc.deleteCard(id);
-						System.out.println("Successfully delete " + name + ".");
+						System.out.println(" Successfully delete " + name + ".");
 					}else {
-						System.out.println("Cancel to delete card.");
+						System.out.println(" Cancel to delete card.");
 					}
 					enter();
 					break;
 				}else {
-					System.out.printf("Card with name %s is not found.\n", name);
+					System.out.printf(" Card with name %s is not found.\n", name);
 					enter();
 				}
 			}
@@ -365,12 +365,12 @@ public class StaffView extends View{
 			String col = "";
 			int value = 0;
 			try {
-				System.out.println("Change ultra stats");
-				System.out.println("1. Ultra Stats");
-				System.out.println("2. Energy Boost");
-				System.out.println("3. Special stats");
-				System.out.println("0. Cancel");
-				System.out.print(">> ");
+				System.out.println(" Change ultra stats");
+				System.out.println(" 1. Ultra Stats");
+				System.out.println(" 2. Energy Boost");
+				System.out.println(" 3. Special stats");
+				System.out.println(" 0. Cancel");
+				System.out.print(" >> ");
 				int input = sc.nextInt(); sc.nextLine();
 				
 				if(input == 0) break;
@@ -394,11 +394,11 @@ public class StaffView extends View{
 				
 				if(input >=1 && input <= 3) {
 					cc.updateCard("ultra",col, id, value);
-					System.out.println("Successfully updated.");
+					System.out.println(" Successfully updated.");
 					break;
 				}
 			} catch (Exception e) {
-				System.out.println("Your input must be between 0 until 3.");
+				System.out.println(" Your input must be between 0 until 3.");
 				enter();
 			}
 		} while (true);
@@ -406,14 +406,14 @@ public class StaffView extends View{
 	}
 	
 	private void printUpdateMenu() {
-		System.out.println("What skill do you want to update?");
-		System.out.println("1. Gold Price");
-		System.out.println("2. Diamond Price");
-		System.out.println("3. Base Health");
-		System.out.println("4. Base Attack Power");
-		System.out.println("5. Base Defend");
-		System.out.println("6. Attack Penetration");
-		System.out.println("7. Defend Penetration");
+		System.out.println(" What skill do you want to update?");
+		System.out.println(" 1. Gold Price");
+		System.out.println(" 2. Diamond Price");
+		System.out.println(" 3. Base Health");
+		System.out.println(" 4. Base Attack Power");
+		System.out.println(" 5. Base Defend");
+		System.out.println(" 6. Attack Penetration");
+		System.out.println(" 7. Defend Penetration");
 	}
 	
 	
@@ -422,9 +422,9 @@ public class StaffView extends View{
 			separator();
 			int thresh = 7;
 			String table = "card";
-			System.out.println("Update Card Statistic\n");
+			System.out.println(" Update Card Statistic\n");
 			showAllCard();
-			System.out.print("Input card name to update [Case sensitive]: ");
+			System.out.print(" Input card name to update [Case sensitive]: ");
 			String name = sc.nextLine();
 			String id = cc.isCardExist(name);
 			
@@ -434,25 +434,25 @@ public class StaffView extends View{
 				printUpdateMenu();
 				if(grade.equals("Celestial")|| grade.equals("Divine")) {
 					thresh++;
-					System.out.println("8. Ultra Stats");
+					System.out.println(" 8. Ultra Stats");
 				}
-				System.out.println("0. Cancel");
+				System.out.println(" 0. Cancel");
 				
 				
 				int input;
 				do {
 					try {
-						System.out.print(">> ");
+						System.out.print(" >> ");
 						input = sc.nextInt();sc.nextLine();
 						if (input >= 0 && input <= thresh ) {
 							break;
 						} else {
-							System.out.println("Your input must be between 0 until " + thresh);
+							System.out.println(" Your input must be between 0 until " + thresh);
 							enter();
 						}
 					} catch (Exception e) {
 						sc.nextLine();
-						System.out.println("Invalid input. Please try again.");
+						System.out.println(" Invalid input. Please try again.");
 						enter();
 					}
 				} while (true);
@@ -496,16 +496,16 @@ public class StaffView extends View{
 					updateUltra(id, grade);
 					break;
 				default:
-					System.out.println("Invalid input.");
+					System.out.println(" Invalid input.");
 					break;
 				}
 				if (input >=1 && input <= 7 ) {
 					cc.updateCard(table,col, id, changed);
-					System.out.println("Successfully updated.");
+					System.out.println(" Successfully updated.");
 				}
 				break;
 			}else {
-				System.out.println("Card with name " + name + " doesn't exist. Try again");
+				System.out.println(" Card with name " + name + " doesn't exist. Try again");
 				enter();
 			}
 		} while (true);

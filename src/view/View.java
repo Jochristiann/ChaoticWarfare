@@ -17,7 +17,7 @@ public abstract class View {
 	}
 	
 	public void enter() {
-		System.out.println("Press enter to continue...");
+		System.out.println(" Press enter to continue...");
 		sc.nextLine();
 	}
 	
@@ -28,7 +28,7 @@ public abstract class View {
 	}
 	
 	public void logout() {
-		System.out.println("Successfully logged out.");
+		System.out.println(" Successfully logged out.");
 		uc.logout();
 		enter();
 		apps.showMenuView();

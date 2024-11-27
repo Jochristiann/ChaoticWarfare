@@ -26,21 +26,21 @@ public final class Guardian extends Silver implements EarthSkill{
 	@Override
 	public void healingEffect() {
 		int heal = (int) (150 + 0.2*this.getBaseHealth());
-		System.out.printf("%s is regenerating! Health is growing up by %d hp.\n", this.getName(),heal);
+		System.out.printf(" %s is regenerating! Health is growing up by %d hp.\n", this.getName(),heal);
 		this.setBaseHealth(heal);
 	}
 
 	@Override
 	public int comboSkill() {
 		int comboDmg = (int) (this.getBasePower()*this.getBaseAtkSpd()*2.5 + this.getBaseDefPen()*this.getBaseHealth());
-		System.out.printf("Combo skill activated! %s is giving %d damage\n", this.getName(),comboDmg);
+		System.out.printf(" Combo skill activated! %s is giving %d damage\n", this.getName(),comboDmg);
 		return comboDmg;
 	}
 
 	@Override
 	public int skill1() {
 		int skill1Dmg = this.getBasePower()*this.getBaseAtkPen() + this.getBasePower();
-		System.out.printf("%s casts %d damage\n", this.getName(),skill1Dmg);
+		System.out.printf(" %s casts %d damage\n", this.getName(),skill1Dmg);
 		return skill1Dmg;
 	}
 
@@ -48,7 +48,7 @@ public final class Guardian extends Silver implements EarthSkill{
 	public int skill2() {
 		int skill2Dmg = this.getBasePower()*this.getBaseAtkPen() + this.getBasePower();
 		this.healingEffect();
-		System.out.printf("%s casts skill %s! The skills is giving %d damage!\n", this.getName(),this.getSkill2Name(),skill2Dmg);
+		System.out.printf(" %s casts skill %s! The skills is giving %d damage!\n", this.getName(),this.getSkill2Name(),skill2Dmg);
 		return skill2Dmg;
 	}
 
@@ -58,10 +58,10 @@ public final class Guardian extends Silver implements EarthSkill{
 		if(realDmg < 0) {
 			realDmg = 0;
 		}
-		System.out.printf("%s got hit! Damage taken %d\n", realDmg);
+		System.out.printf(" %s got hit! Damage taken %d\n", realDmg);
 		int healEff = (int) (realDmg *0.01);
 		this.setBaseHealth(healEff);
-		System.out.printf("Wow! %s gets lifesteal %d\n", healEff);
+		System.out.printf(" Wow! %s gets lifesteal %d\n", healEff);
 		this.setHealthAftDmg(realDmg);
 	}
 
@@ -73,7 +73,7 @@ public final class Guardian extends Silver implements EarthSkill{
 	@Override
 	public int earthSkills() {
 		int earthDmg = (int) (this.getBaseDefend()*this.getBaseHealth()/1.75 + 1000);
-		System.out.printf("Earth skill casted! Gives %d damage(s)\n", earthDmg);
+		System.out.printf(" Earth skill casted! Gives %d damage(s)\n", earthDmg);
 		return earthDmg;
 	}
 
@@ -113,7 +113,7 @@ public final class Guardian extends Silver implements EarthSkill{
 				System.out.println(getName() + " is successfully added to temporary database as Guardian Silver card.");
 			}
 		} catch (IOException e) {
-			System.out.println("Failed to insert data.");
+			System.out.println(" Failed to insert data.");
 		}
 	}
 	

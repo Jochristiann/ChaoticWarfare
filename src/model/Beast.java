@@ -28,9 +28,9 @@ public final class Beast extends Basic implements BlackMythSkill{
 		int rate = rand.nextInt(10);
 		if(rate == 1) {
 			skill1Dmg += (this.getBaseAtkPen()*this.getBasePower()/1.75);
-			System.out.println("Extra damage activated!");
+			System.out.println(" Extra damage activated!");
 		}
-		System.out.printf("%s hits enemy using %s! Damage deals %d!\n", this.getName(),this.getSkill1Name(), skill1Dmg);
+		System.out.printf(" %s hits enemy using %s! Damage deals %d!\n", this.getName(),this.getSkill1Name(), skill1Dmg);
 		return skill1Dmg;
 	}
 
@@ -42,7 +42,7 @@ public final class Beast extends Basic implements BlackMythSkill{
 		if(rate == 1) {
 			skill2Dmg += blackMythSkills();
 		}
-		System.out.printf("%s is furious! %d damage(s) is given\n", this.getName(), skill2Dmg);
+		System.out.printf(" %s is furious! %d damage(s) is given\n", this.getName(), skill2Dmg);
 		return skill2Dmg;
 	}
 
@@ -58,7 +58,7 @@ public final class Beast extends Basic implements BlackMythSkill{
 			newPower+=25;
 		}
 		this.setBasePower(newPower);
-		System.out.printf("%s is using black myth skills and increases the base attack power by %d!\n", this.getName(),newPower);
+		System.out.printf(" %s is using black myth skills and increases the base attack power by %d!\n", this.getName(),newPower);
 		return newPower/2;
 	}
 
@@ -71,7 +71,7 @@ public final class Beast extends Basic implements BlackMythSkill{
 	        preparedStatement.setString(1, this.getId());
 	        preparedStatement.setString(2, blackMythSkill);
 	        preparedStatement.executeUpdate();
-	        System.out.println(this.getName() + " is successfully added as Beast Basic card.");
+	        System.out.println(" "+this.getName() + " is successfully added as Beast Basic card.");
 	    } catch (SQLException e) {
 	    }
 	}
@@ -82,10 +82,10 @@ public final class Beast extends Basic implements BlackMythSkill{
 			try (BufferedWriter bw = new BufferedWriter(fw)) {
 				String data = String.format("%s#%s#%d#%d#%d#%d#%d#%.1f#%d#%d#%s#%s#%s#%s%s\n", this.getId(),this.getName(),this.getGoldPrice(),this.getDiamondPrice(),this.getBaseHealth(),this.getBasePower(),this.getBaseDefend(),this.getBaseAtkSpd(),this.getBaseAtkPen(),this.getBaseDefPen(),this.getSkill1Name(),this.getSkill2Name(),"Basic","Beast",blackMythSkill);
 				bw.write(data);
-				System.out.println(getName() + " is successfully added to temporary database as Beast Basic card.");
+				System.out.println(" "+getName() + " is successfully added to temporary database as Beast Basic card.");
 			}
 		} catch (IOException e) {
-			System.out.println("Failed to insert data.");
+			System.out.println(" Failed to insert data.");
 		}
 	}
 	

@@ -25,7 +25,6 @@ public class GameController {
 	
 	public static void createInstance(Card userCard, String mode, String difficulty, AppController ap) {
 		if(gc == null) {
-			System.out.println("create");
 			gc =  new GameController(userCard, mode, difficulty, ap);
 		}
 	}
