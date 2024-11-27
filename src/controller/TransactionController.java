@@ -28,7 +28,7 @@ public class TransactionController {
 		ResultSet res = pl.isCardOwned(id);
 		try {
 			if(res.next()) {
-				System.out.println("You already owned the card.");
+				System.out.println(" You already owned the card.");
 				return true;
 			}
 		} catch (SQLException e) {
@@ -44,7 +44,7 @@ public class TransactionController {
 		ResultSet res = boughtCard(name);
 		try {
 			if(!res.next()) {
-				System.out.println("Card with name " + name + " doesn't exist. Please try again.");
+				System.out.println(" Card with name " + name + " doesn't exist. Please try again.");
 				return false;
 			}
 		} catch (SQLException e) {
@@ -76,7 +76,7 @@ public class TransactionController {
 			}else {
 				pl.setDiamond(saldo - price);
 			}
-			System.out.println("Successfully bought.");
+			System.out.println(" Successfully bought.");
 			uc.refreshOwnedCard();
 		}else {
 			System.out.println(notifFailed);

@@ -17,14 +17,14 @@ public class AirKing extends Silver {
 	@Override
 	public void healingEffect() {
 		int heal = (int) (100 + 0.1*this.getBaseHealth());
-		System.out.printf("%s is regenerating and get %d hp.\n", this.getName(),heal);
+		System.out.printf(" %s is regenerating and get %d hp.\n", this.getName(),heal);
 		this.setBaseHealth(heal);
 	}
 
 	@Override
 	public int comboSkill() {
 		int comboDmg = (int) (this.getBasePower()*this.getBaseAtkSpd()*3.5 + this.getBaseAtkPen()*this.getBasePower()/1.75);
-		System.out.printf("Combo skill is activated! %s is giving %d damage\n", this.getName(),comboDmg);
+		System.out.printf(" Combo skill is activated! %s is giving %d damage\n", this.getName(),comboDmg);
 		return comboDmg;
 	}
 
@@ -33,14 +33,14 @@ public class AirKing extends Silver {
 		int skill1Dmg = this.getBasePower()*this.getBaseAtkPen() + this.getBasePower();
 		int healEff = (int) (skill1Dmg*0.05);
 		this.setBaseHealth(healEff);
-		System.out.printf("%s casts %d damage and raises their health %d\n", this.getName(),skill1Dmg, healEff);
+		System.out.printf(" %s casts %d damage and raises their health %d\n", this.getName(),skill1Dmg, healEff);
 		return skill1Dmg;
 	}
 
 	@Override
 	public int skill2() {
 		int skill2Dmg = this.getBasePower()*this.getBaseAtkPen() + this.getBasePower();
-		System.out.printf("%s casts skill %s and gives %d damage!\n", this.getName(),this.getSkill2Name(),skill2Dmg);
+		System.out.printf(" %s casts skill %s and gives %d damage!\n", this.getName(),this.getSkill2Name(),skill2Dmg);
 		return skill2Dmg;
 	}
 
@@ -50,7 +50,7 @@ public class AirKing extends Silver {
 		if(realDmg < 0) {
 			realDmg = 0;
 		}
-		System.out.printf("%s got hit! Damage taken %d\n", this.getName(), realDmg);
+		System.out.printf(" %s got hit! Damage taken %d\n", this.getName(), realDmg);
 		
 		int val = rand.nextInt(5);
 		if(val > 3) {
@@ -62,7 +62,7 @@ public class AirKing extends Silver {
 	public void newAirKing() {
 		String type = "Air King";
 		newSilver(type);
-		System.out.println(getName() + " is successfully added as Air King Silver card.");
+		System.out.println(" "+getName() + " is successfully added as Air King Silver card.");
 	}
 	
 	public void newOffAirKing() {
@@ -74,7 +74,7 @@ public class AirKing extends Silver {
 				System.out.println(getName() + " is successfully added to temporary database as Air King Silver card.");
 			}
 		} catch (IOException e) {
-			System.out.println("Failed to insert data.");
+			System.out.println(" Failed to insert data.");
 		}
 	}
 	

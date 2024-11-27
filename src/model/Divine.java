@@ -27,7 +27,7 @@ public final class Divine extends Ultra implements BlackMythSkill {
 	public int ultraSkill() {
 		int ultraDmg = 0 ;
 		ultraDmg = (int) ((this.getEnergyBoost()*this.getBasePower())/5 + this.getBaseAtkPen()*this.getBasePower()/3 + this.getBasePower());
-		System.out.printf("%s divine ultra power appeared! %s deals %d damages\n",this.getName(),this.getUltraSkill(), ultraDmg);
+		System.out.printf(" %s divine ultra power appeared! %s deals %d damages\n",this.getName(),this.getUltraSkill(), ultraDmg);
 		return ultraDmg;
 	}
 
@@ -35,7 +35,7 @@ public final class Divine extends Ultra implements BlackMythSkill {
 	public int specialSkill(int defEnemy) {
 		int specialDmg = 0;
 		specialDmg = (int) (defEnemy*this.getBaseAtkSpd()*this.getEnergyBoost()/3 + this.getBasePower()/4);
-		System.out.printf("Special skill is activated! %s is giving %d damage\n", this.getSpecialSkill(),specialDmg);
+		System.out.printf(" Special skill is activated! %s is giving %d damage\n", this.getSpecialSkill(),specialDmg);
 		return specialDmg;
 	}
 
@@ -48,7 +48,7 @@ public final class Divine extends Ultra implements BlackMythSkill {
 			skill1Dmg *= 12.5/100;
 			System.out.println("Critical activated!");
 		}
-		System.out.printf("%s hits enemy using %s! Damage deals %d!\n", this.getName(),this.getSkill1Name(), skill1Dmg);
+		System.out.printf(" %s hits enemy using %s! Damage deals %d!\n", this.getName(),this.getSkill1Name(), skill1Dmg);
 		return skill1Dmg;
 	}
 
@@ -56,7 +56,7 @@ public final class Divine extends Ultra implements BlackMythSkill {
 	public int skill2() {
 		int skill2Dmg = 0;
 		skill2Dmg = (int) ((int) (this.getBaseAtkSpd()*this.getBaseAtkPen()*this.getBasePower()/10 + this.getEnergyBoost()*this.getBasePower()*0.75 +this.getBasePower())/1.5);
-		System.out.printf("%s launchs divine powersource! %s divine power deals %d damage(s)\n", this.getName(), this.getSkill2Name(), skill2Dmg);
+		System.out.printf(" %s launchs divine powersource! %s divine power deals %d damage(s)\n", this.getName(), this.getSkill2Name(), skill2Dmg);
 		return skill2Dmg;
 	}
 
@@ -68,12 +68,12 @@ public final class Divine extends Ultra implements BlackMythSkill {
 			damage = 0;
 			int heal = (int) (this.getBaseHealth()*0.45);
 			this.setBaseHealth(heal);
-			System.out.printf("%s gets heal %d!\n", this.getName(),heal);
+			System.out.printf(" %s gets heal %d!\n", this.getName(),heal);
 		}
 		if(realDamage < 0) {
 			realDamage = 0;
 		}
-		System.out.printf("%s got hit! %d damage taken\n", this.getName(),realDamage);
+		System.out.printf(" %s got hit! %d damage taken\n", this.getName(),realDamage);
 		this.setHealthAftDmg(realDamage);
 	}
 
@@ -90,7 +90,7 @@ public final class Divine extends Ultra implements BlackMythSkill {
 			cursedDmg = (int) (this.getBaseHealth()*0.15);
 		}
 		this.setHealthAftDmg(cursedDmg);
-		System.out.printf("%s casts the Black Myth Skills! This cursed skill gives %d damage and also hit %s %d damage(s)\n", this.getName(), blackMythDmg, this.getName(), cursedDmg);
+		System.out.printf(" %s casts the Black Myth Skills! This cursed skill gives %d damage and also hit %s %d damage(s)\n", this.getName(), blackMythDmg, this.getName(), cursedDmg);
 		return blackMythDmg;
 	}
 	
@@ -103,7 +103,7 @@ public final class Divine extends Ultra implements BlackMythSkill {
 	        preparedStatement.setString(1, this.getId());
 	        preparedStatement.setString(2, blackMythSkill);
 	        preparedStatement.executeUpdate();
-	        System.out.println(this.getName() + " is successfully added as Divine Ultra card.");
+	        System.out.println(" "+this.getName() + " is successfully added as Divine Ultra card.");
 	    } catch (SQLException e) {
 	    }
 	}
@@ -127,12 +127,12 @@ public final class Divine extends Ultra implements BlackMythSkill {
 				String data = String.format("%s#%s#%d#%d#%d#%d#%d#%.1f#%d#%d#%s#%s#%s#%s#%s#%d#%d#%s#%d#%s\n", 
 						this.getId(),this.getName(),this.getGoldPrice(),this.getDiamondPrice(),this.getBaseHealth(),this.getBasePower(),this.getBaseDefend(),this.getBaseAtkSpd(),this.getBaseAtkPen(),this.getBaseDefPen(),this.getSkill1Name(),this.getSkill2Name(),"Ultra","Divine",this.getUltraSkill(),this.getUltraStats(),this.getEnergyBoost(), this.getSpecialSkill(),this.getSpecialStats(),this.blackMythSkill);
 				bw.write(data);
-				System.out.println(getName() + " is successfully added to temporary database as Divine Ultra card.");
+				System.out.println(" "+getName() + " is successfully added to temporary database as Divine Ultra card.");
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
 		} catch (IOException e) {
-			System.out.println("Failed to insert data.");
+			System.out.println(" Failed to insert data.");
 		}
 	}
 		

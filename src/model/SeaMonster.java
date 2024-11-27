@@ -25,7 +25,7 @@ public final class SeaMonster extends Gold implements IceSkill {
 	@Override
 	public int awakenSkill() {
 		int awakenDmg = (int) (this.getBaseAtkPen()*this.getBasePower() + this.getBaseAtkSpd()*3*(this.getBasePower()/10));
-		System.out.printf("%s the Sea Monster is using skill %s and giving %d damage\n", this.getName(), this.getAwakeningSkill(),awakenDmg);
+		System.out.printf(" %s the Sea Monster is using skill %s and giving %d damage\n", this.getName(), this.getAwakeningSkill(),awakenDmg);
 		return awakenDmg;
 	}
 
@@ -33,7 +33,7 @@ public final class SeaMonster extends Gold implements IceSkill {
 	public int skill1() {
 		int skill1Dmg = 0;
 		skill1Dmg = (int) (this.getBaseDefend()*this.getBaseAtkPen()*this.getBasePower()/1.3*10);
-		System.out.printf("%s is using skill %s and giving %d damage!\n", this.getName(), this.getSkill1Name(), skill1Dmg);
+		System.out.printf(" %s is using skill %s and giving %d damage!\n", this.getName(), this.getSkill1Name(), skill1Dmg);
 		return skill1Dmg;
 	}
 
@@ -41,7 +41,7 @@ public final class SeaMonster extends Gold implements IceSkill {
 	public int skill2() {
 		int skill2Dmg = 0;
 		skill2Dmg = (int) (this.getBaseDefend() * this.getBaseAtkSpd() *this.getBaseHealth() / 100);
-		System.out.printf("%s is gaining power from their defend rate after using skill %s and giving damage %d!\n", this.getName(),this.getSkill2Name(),skill2Dmg);
+		System.out.printf(" %s is gaining power from their defend rate after using skill %s and giving damage %d!\n", this.getName(),this.getSkill2Name(),skill2Dmg);
 		return skill2Dmg;
 	}
 
@@ -49,7 +49,7 @@ public final class SeaMonster extends Gold implements IceSkill {
 	public void getDamage(int damage) {
 		int realDmg = damage - this.getBaseDefend()*this.getBaseHealth()/1000;
 		this.setHealthAftDmg(realDmg);
-		System.out.printf("%s takes the damage by %d\n", this.getName(),realDmg);
+		System.out.printf(" %s takes the damage by %d\n", this.getName(),realDmg);
 	}
 
 	@Override
@@ -60,7 +60,7 @@ public final class SeaMonster extends Gold implements IceSkill {
 	@Override
 	public int iceSkills() {
 		int ice = (int) (this.getBaseAtkSpd()*this.getBasePower()*1.35 + this.getBaseDefPen()*this.getBaseDefend()*2);
-		System.out.printf("%s uses Sea Monster ice power! %s is activated with power %d\n",this.getName(),this.iceName, ice);
+		System.out.printf(" %s uses Sea Monster ice power! %s is activated with power %d\n",this.getName(),this.iceName, ice);
 		return ice;
 	}
 
@@ -74,7 +74,7 @@ public final class SeaMonster extends Gold implements IceSkill {
 	        preparedStatement.setString(1, this.getId());
 	        preparedStatement.setString(2, iceName);
 	        preparedStatement.executeUpdate();
-	        System.out.println(this.getName() + " is successfully added as Sea Monster Gold card.");
+	        System.out.println(" "+this.getName() + " is successfully added as Sea Monster Gold card.");
 	    } catch (SQLException e) {
 	    }
 	}
@@ -85,10 +85,10 @@ public final class SeaMonster extends Gold implements IceSkill {
 			try (BufferedWriter bw = new BufferedWriter(fw)) {
 				String data = String.format("%s#%s#%d#%d#%d#%d#%d#%.1f#%d#%d#%s#%s#%s#%s#%s\n", this.getId(),this.getName(),this.getGoldPrice(),this.getDiamondPrice(),this.getBaseHealth(),this.getBasePower(),this.getBaseDefend(),this.getBaseAtkSpd(),this.getBaseAtkPen(),this.getBaseDefPen(),this.getSkill1Name(),this.getSkill2Name(),"Gold","SeaMonster",this.iceName);
 				bw.write(data);
-				System.out.println(getName() + " is successfully added to temporary database as Sea Monster Gold card.");
+				System.out.println(" "+getName() + " is successfully added to temporary database as Sea Monster Gold card.");
 			}
 		} catch (IOException e) {
-			System.out.println("Failed to insert data.");
+			System.out.println(" Failed to insert data.");
 		}
 	}
 

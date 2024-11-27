@@ -14,13 +14,13 @@ public class LoginView extends View{
 		String password;
 		do {
 			separator();
-			System.out.println("Login to Chaotic Warfare");
-			System.out.print("Enter Username [0 to exit]: ");
+			System.out.println(" Login to Chaotic Warfare");
+			System.out.print(" Enter Username [0 to exit]: ");
 			username = sc.nextLine();
 			if(username.equals("0")) {
 				apps.showMenuView();
 			}
-			System.out.print("Enter Password            : ");
+			System.out.print(" Enter Password            : ");
 	        password = sc.nextLine();
 			if(uc.login(username, password)) {
 				sc.nextLine();
@@ -36,13 +36,13 @@ public class LoginView extends View{
 		String password;
 		do {
 			separator();
-			System.out.println("Login to Chaotic Warfare Company");
-			System.out.print("Enter Username [0 to exit]: ");
+			System.out.println(" Login to Chaotic Warfare Company");
+			System.out.print(" Enter Username [0 to exit]: ");
 			username = sc.nextLine();
 			if(username.equals("0")) {
 				apps.showMenuView();
 			}
-			System.out.print("Enter Password            : ");
+			System.out.print(" Enter Password            : ");
 	        password = sc.nextLine();
 			if(uc.login(username, password)) {
 				sc.nextLine();

@@ -23,11 +23,11 @@ public class GameView extends View{
 		do {
 			try {
 				separator();
-				System.out.println("Choose mode");
-				System.out.println("1. One versus One (1v1)");
-				System.out.println("2. Bloody war");
-				System.out.println("0. Cancel");
-				System.out.print(">> ");
+				System.out.println(" Choose mode");
+				System.out.println(" 1. One versus One (1v1)");
+				System.out.println(" 2. Bloody war");
+				System.out.println(" 0. Cancel");
+				System.out.print(" >> ");
 				int input = sc.nextInt();sc.nextLine();
 				switch (input) {
 				case 1:
@@ -40,14 +40,14 @@ public class GameView extends View{
 					apps.showLobbyView();
 					break;
 				default:
-					System.out.println("Invalid input. Your input must be between 1 or 2.");
+					System.out.println(" Invalid input. Your input must be between 1 or 2.");
 					enter();
 					break;
 				}
 				
 			} catch (Exception e) {
 				sc.nextLine();
-				System.out.println("Invalid input. Your input must be between 1 or 2.");
+				System.out.println(" Invalid input. Your input must be between 1 or 2.");
 				enter();
 			}
 		} while (true);
@@ -55,16 +55,16 @@ public class GameView extends View{
 	
 	private void showOwnedCard() {
 		int index = 1;
-		System.out.println("Owned Card Name List");
+		System.out.println(" Owned Card Name List");
 		for (Card c : currUser.getOwnedCard()) {
 			if(c instanceof Ultra) {
-				System.out.printf("%d. %-20s - Ultra\n",index, c.getName());
+				System.out.printf(" %d. %-20s - Ultra\n",index, c.getName());
 			}else if(c instanceof Gold) {
-				System.out.printf("%d. %-20s - Gold\n", index, c.getName());
+				System.out.printf(" %d. %-20s - Gold\n", index, c.getName());
 			}else if(c instanceof Silver) {
-				System.out.printf("%d. %-20s - Silver\n", index, c.getName());
+				System.out.printf(" %d. %-20s - Silver\n", index, c.getName());
 			}else if(c instanceof Basic) {
-				System.out.printf("%d. %-20s - Basic\n", index, c.getName());
+				System.out.printf(" %d. %-20s - Basic\n", index, c.getName());
 			}
 			index++;
 		}
@@ -73,7 +73,7 @@ public class GameView extends View{
 	private void mode(int mode) {
 		
 		if(currUser.getOwnedCard().isEmpty()) {
-			System.out.println("You must have atleast one card. You can buy in the store.");
+			System.out.println(" You must have atleast one card. You can buy in the store.");
 			enter();
 			return;
 		}
@@ -81,7 +81,7 @@ public class GameView extends View{
 		do {
 			separator();
 			showOwnedCard();
-			System.out.print("Choose your card by name [Case insensitive]: ");
+			System.out.print(" Choose your card by name [Case insensitive]: ");
 			String name = sc.nextLine();
 			for (Card c : currUser.getOwnedCard()) {
 				if(c.getName().equalsIgnoreCase(name)) {
@@ -91,7 +91,7 @@ public class GameView extends View{
 			if(choosenCard != null) {
 				break;
 			}else {
-				System.out.println("You dont have any card with name "+name);
+				System.out.println(" You dont have any card with name "+name);
 				enter();
 			}
 		} while (true);
@@ -100,12 +100,12 @@ public class GameView extends View{
 		do {
 			try {
 				separator();
-				System.out.println("Choose difficulty");
-				System.out.println("1. Easy");
-				System.out.println("2. Hard");
-				System.out.println("3. Extreme");
-				System.out.println("0. Exit");
-				System.out.print(">> ");
+				System.out.println(" Choose difficulty");
+				System.out.println(" 1. Easy");
+				System.out.println(" 2. Hard");
+				System.out.println(" 3. Extreme");
+				System.out.println(" 0. Exit");
+				System.out.print(" >> ");
 				int modes = sc.nextInt();sc.nextLine();
 				switch (modes) {
 				case 1:
@@ -120,7 +120,7 @@ public class GameView extends View{
 				case 0:
 					return;
 				default:
-					System.out.println("You must input value between 1 until 3.");
+					System.out.println(" You must input value between 1 until 3.");
 					break;
 				}
 				
@@ -129,7 +129,7 @@ public class GameView extends View{
 				}
 				
 			} catch (Exception e) {
-				System.out.println("Your input must be a number that in range 1 until 3.");
+				System.out.println(" Your input must be a number that in range 1 until 3.");
 				enter();
 			}
 		} while (true);

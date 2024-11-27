@@ -30,7 +30,7 @@ public class StoreView extends View {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (cardIndex < cards.size()) {
-                    System.out.printf("[%-45s] ", cards.get(cardIndex).grid());
+                    System.out.printf(" [%-45s] ", cards.get(cardIndex).grid());
                     cardIndex++;
                 }
             }
@@ -41,11 +41,11 @@ public class StoreView extends View {
 	public void storeDisplay() {
 		do {
 			separator();
-			System.out.println("!! Chaotic Warfare Store !!");
+			System.out.println(" !! Chaotic Warfare Store !!");
 			System.out.println("\n\n");
-			System.out.println("Cards");
+			System.out.println(" Cards");
 			showAllCard();
-			System.out.print("Enter card name to buy [0 to back] [case insensitive]: ");
+			System.out.print(" Enter card name to buy [0 to back] [case insensitive]: ");
 			String name = sc.nextLine();
 			if(name.equals("0")) {
 				break;
@@ -63,13 +63,13 @@ public class StoreView extends View {
 									int goldPrice = res.getInt("CardGoldPrice");
 									
 									separator();
-									System.out.println("Card Information");
-									System.out.printf("Type: %s\nName: %s\nGold Price: %d\nDiamond Price: %d\n", type, acname, goldPrice, diamondPrice);
-									System.out.println("Currency to buy");
-									System.out.println("1. Gold");
-									System.out.println("2. Diamond");
-									System.out.println("0. Cancel");
-									System.out.print(">> ");
+									System.out.println(" Card Information");
+									System.out.printf(" Type: %s\nName: %s\nGold Price: %d\nDiamond Price: %d\n", type, acname, goldPrice, diamondPrice);
+									System.out.println(" Currency to buy");
+									System.out.println(" 1. Gold");
+									System.out.println(" 2. Diamond");
+									System.out.println(" 0. Cancel");
+									System.out.print(" >> ");
 									int input = sc.nextInt();sc.nextLine();
 									if(input == 1) {
 										cc.buyCards(id, goldPrice, input);
@@ -78,16 +78,16 @@ public class StoreView extends View {
 										cc.buyCards(id, diamondPrice, input);
 										break;
 									}else if(input == 0){
-										System.out.println("Purchasing card is cancelled :(");
+										System.out.println(" Purchasing card is cancelled :(");
 										enter();
 										break;
 									}
 									else {
-										System.out.println("Invalid input. Try again.");
+										System.out.println(" Invalid input. Try again.");
 										enter();
 									}
 								} catch (Exception e) {
-									System.out.println("Input must be a number between 1 or 2");
+									System.out.println(" Input must be a number between 1 or 2");
 									enter();
 								}
 							} while (true);
@@ -97,7 +97,7 @@ public class StoreView extends View {
 					}
 				}
 				
-				System.out.print("Continue to buy item? [n to exit] ");
+				System.out.print(" Continue to buy item? [n to exit] ");
 				String inputs = sc.nextLine();
 				if(inputs.equalsIgnoreCase("n")) {
 					break;

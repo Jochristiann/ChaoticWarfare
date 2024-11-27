@@ -19,13 +19,13 @@ public class Company {
 	
 	public String isTryValid(String name) {
 		if(this.tryCount == 3) {
-			return "You have reach maximum try. Please contact the CEO to reset";
+			return " You have reach maximum try. Please contact the CEO to reset";
 		}
 		if(name.equals(Company.secretCredentials)) {
 			return "Success";
 		}
 		this.tryCount++;
-		return "Incorrect credentials. Please try again.\nRemaining try: " + (3 - this.tryCount);
+		return " Incorrect credentials. Please try again.\nRemaining try: " + (3 - this.tryCount);
 	}
 	
 	public void resetTry() {

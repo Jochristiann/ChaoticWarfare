@@ -11,11 +11,11 @@ public class RegisterView extends View {
 
 	public void registerForm() {
 		separator();
-		System.out.println("Create a new account in Chaotic Warfare");
+		System.out.println(" Create a new account in Chaotic Warfare");
 		String username, password;
 		do {
 			
-			System.out.print("Enter username [0 to exit]: ");
+			System.out.print(" Enter username [0 to exit]: ");
 			username = sc.nextLine();
 			if (username.equals("0")) {
 				return;
@@ -27,7 +27,7 @@ public class RegisterView extends View {
 		} while (true);
 		
 		do {
-			System.out.print("Enter password            : ");
+			System.out.print(" Enter password            : ");
 			password = sc.nextLine();
 			if(uc.validateNewPassword(password)) {
 				break;

@@ -13,12 +13,12 @@ public class LobbyView extends View{
 		do {
 			try {
 				separator();
-				System.out.println("Game Lobby");
-				System.out.println("1. Play game");
-				System.out.println("2. Store");
-				System.out.println("3. How to Play");
-				System.out.println("4. Profile");
-				System.out.println("0. Log out");
+				System.out.println(" Game Lobby");
+				System.out.println(" 1. Play game");
+				System.out.println(" 2. Store");
+				System.out.println(" 3. How to Play");
+				System.out.println(" 4. Profile");
+				System.out.println(" 0. Log out");
 				System.out.print(">> ");
 				int input = sc.nextInt();sc.nextLine();
 				switch (input) {
@@ -38,12 +38,12 @@ public class LobbyView extends View{
 					logout();
 					break;
 				default:
-					System.out.println("Invalid input. Please try again.");
+					System.out.println(" Invalid input. Please try again.");
 					break;
 				}
 			} catch (Exception e) {
 				sc.nextLine();
-				System.out.println("Input must be in number between 0 until 4.");
+				System.out.println(" Input must be in number between 0 until 4.");
 				enter();
 			}
 		} while (true);
